@@ -1,103 +1,93 @@
-# CLARE-ity POV Integration Instructions
+# CLARE-ity POV Integration Instructions v2
 
-This folder contains everything needed to integrate the CLARE-ity POV into any SpecSpec project.
+## Overview
 
-## 📦 Complete Integration Package
+This folder contains updated integration files for the CLARE-ity POV augment with the revised help text description: **"Rigorous relational project management for multi-stakeholder initiatives"**
 
-### Core Files:
-1. **`CLARE-ity_POV.md`** - The complete POV augment file
-2. **`clare-ity_pov_example.md`** - Example transformation showing the POV in action
-3. **`setup_specspec_agent_updated.sh`** - Updated setup script with CLARE-ity integration
+## Files Included
 
-### Documentation Updates:
-4. **`README_additions.md`** - Sections to add to your project's README.md
-5. **`QUICKSTART_additions.md`** - Sections to add to your QUICKSTART.md
+### 1. `setup_specspec_agent.ps1`
+- **Updated PowerShell setup script for Windows**
+- Contains the new CLARE-ity POV description in the help display
+- Line 142: Updated help text
 
-## 🚀 Step-by-Step Integration
+### 2. `setup_specspec_agent.sh` 
+- **Updated bash setup script for Linux/Mac**
+- Contains the new CLARE-ity POV description in the help display
+- Line 147: Updated help text
 
-### Step 1: Add the POV File
+### 3. `README.md`
+- **Updated main README with new CLARE-ity description**
+- Line 103: Updated POV description from "Perspectival intelligence translation with conversation-first methodology" to "Rigorous relational project management for multi-stakeholder initiatives"
+
+### 4. `QUICKSTART.md`
+- **Updated quick start guide with new CLARE-ity description**
+- Line 110: Updated POV description
+
+## Integration Steps
+
+### To Apply These Updates:
+
+1. **For PowerShell Script (Windows)**:
+   - Replace the existing `setup_specspec_agent.ps1` with the version in this folder
+   - Or manually update line 142 with the new help text
+
+2. **For Bash Script (Linux/Mac)**:
+   - Replace the existing `setup_specspec_agent.sh` with the version in this folder  
+   - Or manually update line 147 with the new help text
+
+3. **For Documentation**:
+   - Replace the existing `README.md` with the version in this folder
+   - Replace the existing `QUICKSTART.md` with the version in this folder
+
+### Verification
+
+After integration, verify the updates by running:
 ```bash
-# Copy the POV augment to your SpecSpec augments directory
-cp CLARE-ity_POV.md /path/to/your/specspec/augments/
+specspec --help
 ```
 
-### Step 2: Add the Example
-```bash
-# Copy the example to your examples directory
-cp clare-ity_pov_example.md /path/to/your/specspec/examples/
+You should see:
+```
+Available POV Augments:
+  indydevdan         - Agentic layer architecture and multi-agent observability
+  indydevdan-precise - Precise engineering architecture with full observability stack
+  judys-ass-fire     - Immediate action mode with clear owners and deadlines (TODAY!)
+  clare-ity          - Rigorous relational project management for multi-stakeholder initiatives
 ```
 
-### Step 3: Update Your Setup Script
-Either:
-- **Option A**: Replace your `setup_specspec_agent.sh` with `setup_specspec_agent_updated.sh`
-- **Option B**: Manually add these lines to your existing setup script:
+## Changes Summary
 
-In the help section (around line 147), add:
-```bash
-echo "  clare-ity          - Perspectival intelligence translation with conversation-first methodology"
-```
+### What Changed:
+- **Old Description**: "Perspectival intelligence translation with conversation-first methodology"
+- **New Description**: "Rigorous relational project management for multi-stakeholder initiatives"
 
-In the examples section (around line 153), add:
-```bash
-echo ""
-echo "Strategic Combinations:"
-echo "  specspec new 'enterprise platform' --pov indydevdan --pov clare-ity  # Technical + Human Systems"
-echo "  specspec new 'urgent migration' --pov clare-ity --pov judys-ass-fire  # Stakeholder Alignment + Speed"
-echo "  specspec new 'AI product launch' --pov indydevdan-precise --pov clare-ity --pov judys-ass-fire  # Ultimate Combo"
-```
+### Why This Change:
+- More concise and actionable description
+- Better communicates the core value proposition
+- Focuses on the practical application (project management)
+- Highlights the multi-stakeholder focus
+- Uses "rigorous" to convey systematic/methodical approach
 
-### Step 4: Update Documentation
-Use the content from:
-- **`README_additions.md`** - Add the CLARE-ity POV section and updated combinations to your README.md
-- **`QUICKSTART_additions.md`** - Add the CLARE-ity examples to your QUICKSTART.md
+### Files That Were Updated:
+- ✅ `setup_specspec_agent.ps1` (Windows setup script)
+- ✅ `setup_specspec_agent.sh` (Linux/Mac setup script)  
+- ✅ `README.md` (Main documentation)
+- ✅ `QUICKSTART.md` (Quick start guide)
 
-### Step 5: Run Setup
-```bash
-# Make setup script executable and run it
-chmod +x setup_specspec_agent.sh
-./setup_specspec_agent.sh
-```
+## Notes
 
-### Step 6: Test Integration
-```bash
-# Test that CLARE-ity POV is available
-specspec
+- The CLARE-ity POV augment file itself (`CLARE-ity_POV.md`) was not modified - only the integration points
+- All functionality remains the same, only the description text changed
+- The new description better reflects the augment's focus on systematic project management for complex collaborative initiatives
 
-# Should show clare-ity in the Available POV Augments list
+## Integration Locations Reference
 
-# Test generating a spec with CLARE-ity POV
-specspec new "test project" --pov clare-ity
-```
+For future reference, the CLARE-ity POV description appears in these locations:
 
-## ✅ Verification Checklist
+1. **PowerShell Setup Script**: Line 142
+2. **Bash Setup Script**: Line 147  
+3. **README.md**: Line 103 (POV description)
+4. **QUICKSTART.md**: Line 110 (POV description)
 
-After integration, verify:
-- [ ] `specspec` command shows `clare-ity` in Available POV Augments
-- [ ] Strategic combinations examples are shown in help output
-- [ ] Can generate specs with `--pov clare-ity` flag
-- [ ] Can combine with other POVs: `--pov indydevdan --pov clare-ity`
-- [ ] README includes CLARE-ity section with use cases
-- [ ] QUICKSTART includes CLARE-ity examples
-
-## 🎯 What CLARE-ity POV Adds
-
-**Perfect for:**
-- Cross-functional projects requiring stakeholder alignment
-- Complex initiatives with multiple domain experts  
-- Long-term strategic systems needing human-centered scaling
-- Projects where relationship quality affects technical outcomes
-
-**Strategic Combinations:**
-- **With IndyDevDan POV**: Technical systems + human collaboration
-- **With Judy's Ass Fire POV**: Stakeholder alignment + rapid execution
-- **With Both**: Complete technical + human + execution coverage
-
-## 📞 Support
-
-If you encounter issues during integration:
-1. Ensure all file paths match your SpecSpec project structure
-2. Check that the POV file is named exactly `CLARE-ity_POV.md` (with underscore)
-3. Verify the setup script includes the clare-ity references
-4. Test with a simple spec generation first
-
-The CLARE-ity POV brings perspectival intelligence translation, conversation-first methodology, and measurement accountability to any SpecSpec project!
+This ensures consistent messaging across all user-facing documentation and help systems.
